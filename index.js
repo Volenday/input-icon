@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Select } from 'antd';
+import { Form, Select, Skeleton } from 'antd';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,7 +25,6 @@ export default ({
 				disabled={disabled}
 				id={id}
 				name={id}
-				placeholder="select one country"
 				onChange={e => onChange({ target: { name: id, value: e } }, id, e)}
 				optionLabelProp="label"
 				placeholder={placeholder || label || id}
@@ -33,7 +32,7 @@ export default ({
 				showSearch
 				style={{ width: '100%', ...styles }}
 				suffixIcon={<i class={value} />}
-				value={value ? value : ''}>
+				value={value}>
 				{icons.map(d => (
 					<Select.Option
 						key={`${d.prefix}-fa-${d.iconName}`}
